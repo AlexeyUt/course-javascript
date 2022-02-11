@@ -12,7 +12,7 @@
  */
 function createDivWithText(text) {
   const something = document.createElement('div');
-  something.textContent = 'text';
+  something.textContent = text;
 
   return something;
 }
@@ -26,7 +26,7 @@ function createDivWithText(text) {
    prepend(document.querySelector('#one'), document.querySelector('#two')) // добавит элемент переданный первым аргументом в начало элемента переданного вторым аргументом
  */
 function prepend(what, where) {
-  where.insertBefore(what, where.firstElementChild);
+  where.insertBefore(what, where.firstChild);
 }
 
 /*
