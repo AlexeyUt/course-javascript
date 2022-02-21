@@ -79,12 +79,18 @@ function delegate(target, fn) {
 function once(target, fn) {
   let already = false;
 
-  target.addEventListener('click', () => {
-    if (!already) {
-      fn();
-      already = true;
+  target.addEventListener(
+    'click',
+    () => {
+      if (!already) {
+        fn();
+        already = true;
+      }
+    },
+    {
+      once: true,
     }
-  });
+  );
 }
 
 export { addListener, removeListener, skipDefault, emulateClick, delegate, once };
