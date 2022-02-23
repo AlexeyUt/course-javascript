@@ -47,12 +47,32 @@ export function createDiv() {
   div.style.width = random(minSize, maxSize) + 'px';
   div.style.height = random(minSize, maxSize) + 'px';
 
-  div.addEventListener('mousedown', (e) => {
+  homeworkContainer.onmousedown = (e) => {
+    const elem = e.target;
+
+    if (!elem.classList.contains('draggable-div')) {
+      return;
+    }
+
+    // можем двигать элемент
+
+    document.onmousemove = (e) => {
+      currentDrag = div;
+      startX = e.offsetX;
+      startY = e.offsetY;
+    };
+
+    document.onmouseup = () => {
+      currentDrag = false;
+    };
+  };
+
+  /*div.addEventListener('mousedown', (e) => {
     currentDrag = div;
     startX = e.offsetX;
     startY = e.offsetY;
   });
-  div.addEventListener('mouseup', () => (currentDrag = false));
+  div.addEventListener('mouseup', () => (currentDrag = false));*/
 
   return div;
 }
