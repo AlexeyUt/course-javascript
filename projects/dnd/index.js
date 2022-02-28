@@ -47,7 +47,7 @@ export function createDiv() {
   div.style.width = random(minSize, maxSize) + 'px';
   div.style.height = random(minSize, maxSize) + 'px';
 
-  homeworkContainer.onmousedown = (e) => {
+  /*homeworkContainer.onmousedown = (e) => {
     const elem = e.target;
 
     if (!elem.classList.contains('draggable-div')) {
@@ -65,14 +65,14 @@ export function createDiv() {
     document.onmouseup = () => {
       currentDrag = false;
     };
-  };
+  };*/
 
-  /*div.addEventListener('mousedown', (e) => {
+  div.addEventListener('mousedown', (e) => {
     currentDrag = div;
     startX = e.offsetX;
     startY = e.offsetY;
   });
-  div.addEventListener('mouseup', () => (currentDrag = false));*/
+  div.addEventListener('mouseup', () => (currentDrag = false));
 
   return div;
 }
